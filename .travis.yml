@@ -6,7 +6,7 @@ before_install:
   - docker build -t ryanfitzgerald/docker-app-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true react-test npm test -- --coverage
+  - docker run -e CI=true ryanfitzgerald/react-test npm test -- --coverage
 
 after_success:
   - docker build -t ryanfitzgerald/docker-app-client ./client
