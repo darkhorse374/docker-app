@@ -13,7 +13,7 @@ after_success:
   - docker build -t ryanfitzgerald/docker-app-nginx ./nginx
   - docker build -t ryanfitzgerald/docker-app-server ./server
   - docker build -t ryanfitzgerald/docker-app-worker ./worker
-  # Login to docker CLI
+  # Login to docker via CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push ryanfitzgerald/docker-app-client
